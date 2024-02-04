@@ -1,4 +1,4 @@
-package kolkoKrzyzyk.logic.plansza;
+package kolkoKrzyzyk.ustawienia.plansza;
 
 public class Pole {
 

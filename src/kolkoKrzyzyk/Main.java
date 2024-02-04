@@ -1,37 +1,25 @@
 package kolkoKrzyzyk;
 
-import kolkoKrzyzyk.logic.gracze.GraczO;
-import kolkoKrzyzyk.logic.gracze.GraczX;
-import kolkoKrzyzyk.logic.plansza.Plansza;
-import kolkoKrzyzyk.logic.plansza.Symbol;
+import kolkoKrzyzyk.ustawienia.logika_gry.CzyZwyciezcaRundy;
+import kolkoKrzyzyk.ustawienia.logika_gry.UstawieniaStartGry;
+import kolkoKrzyzyk.ustawienia.logika_gry.Rozgrywka;
+import kolkoKrzyzyk.ustawienia.logika_gry.KoniecGry;
+import kolkoKrzyzyk.ustawienia.plansza.Plansza;
+import static kolkoKrzyzyk.ustawienia.logika_gry.UstawieniaStartGry.getResult;
 
 public class Main {
     public static void main(String[] args) {
 
-        int size = 3;
-        Plansza plansza = new Plansza(size);
-        System.out.println(plansza);
+        UstawieniaStartGry.Results result = getResult();
 
-        GraczX graczX = new GraczX("Ada");
-        GraczO graczO = new GraczO("Ola");
+        Plansza plansza = new Plansza(result.size());
+        Rozgrywka rozgrywka = new Rozgrywka();
+        CzyZwyciezcaRundy zwyciezcaRundy = new CzyZwyciezcaRundy();
+        rozgrywka.rozgrywajGre(result.size(), result.ileSymboliWygrywa(), result.ileRund(), plansza, result.graczO(), result.graczX(), zwyciezcaRundy);
+        KoniecGry koniecGry = new KoniecGry();
+        koniecGry.ktoWygrywa(result.graczO(), result.graczX());
 
-
-        while (true) {
-            graczX.mojRuch(plansza, size);
-            System.out.println(plansza);
-
-            graczO.mojRuch(plansza, size);
-            System.out.println(plansza);
-
-        }
     }
 
-//        if (czyZwyciezca(plansza, wier, pol)) {
-//        System.out.println("WYGRAŁ: " + this.name + "_" + Symbol.O.getS() + ", brawo!!!");
-//        break;
-//    }
-
-
-
-
 }
+

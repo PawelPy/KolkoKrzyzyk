@@ -6,7 +6,7 @@ import kolkoKrzyzyk.ustawienia.gracze.GraczX;
 
 import java.util.Scanner;
 
-public class UstawieniaGry {
+public class UstawieniaStartGry {
 
     public static Results getResult() {
 

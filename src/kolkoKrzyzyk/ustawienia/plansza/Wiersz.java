@@ -1,4 +1,4 @@
-package kolkoKrzyzyk.logic.plansza;
+package kolkoKrzyzyk.ustawienia.plansza;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +10,16 @@ public class Wiersz {
 
 
     public Wiersz(int size) {
+        wiersz = getPoles(size);
+    }
+
+    private List<Pole> getPoles(int size) {
+        final List<Pole> wiersz;
         wiersz = new ArrayList<>();
         for (int pol = 0; pol < size; pol++) {
             wiersz.add(pol, new Pole(Symbol.None));
         }
+        return wiersz;
     }
 
     public List<Pole> getWiersz() {
@@ -22,16 +28,16 @@ public class Wiersz {
 
     @Override
     public String toString() {
-        String string = " ";
+        StringBuilder string = new StringBuilder(" ");
         for (int pol = 0; pol < wiersz.size(); pol++) {
-            string += String.valueOf(wiersz.get(pol).getSymbol().getS());
+            string.append(wiersz.get(pol).getSymbol());
             if (pol < wiersz.size() - 1) {
-                string += " | ";
+                string.append(" | ");
             } else {
-                string += "";
             }
         }
-        return string;
+        return string.toString();
     }
 }
+
 

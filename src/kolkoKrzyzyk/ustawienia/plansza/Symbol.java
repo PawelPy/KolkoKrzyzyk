@@ -2,8 +2,8 @@ package kolkoKrzyzyk.ustawienia.plansza;
 
 public enum Symbol {
 
-    X("X"),
-    O("O"),
+    X("x"),
+    O("o"),
     None(" ");
 
     private final String s;
@@ -12,14 +12,10 @@ public enum Symbol {
         this.s = s;
     }
 
-
-    public String getS() {
+    @Override
+    public String toString() {   // metoda powoduje że wszędzie w kodzie mamy String s "x, o"
         return s;
     }
-
-
-
-
 
 
 }

@@ -4,17 +4,11 @@ import kolkoKrzyzyk.ustawienia.gracze.Gracz;
 import kolkoKrzyzyk.ustawienia.plansza.Plansza;
 import kolkoKrzyzyk.ustawienia.plansza.Symbol;
 
-import java.sql.SQLOutput;
 
-public class CzyZwyciezca {
+public class CzyZwyciezcaRundy {
 
-    private boolean czyZwyciezca;
 
-    public boolean getCzyZwyciezca() {
-        return czyZwyciezca;
-    }
-
-    public boolean czyZwyciezca(Plansza plansza, int size, Gracz gracz, int ileWygrywa) {
+    public boolean czyZwyciezcaRundy(Plansza plansza, int size, Gracz gracz, int ileWygrywa) {
 
         if (czyZwyciezcaWiersze(plansza, size, gracz, ileWygrywa)) {
             return true;

@@ -3,7 +3,7 @@ package kolkoKrzyzyk.ustawienia.logika_gry;
 import kolkoKrzyzyk.ustawienia.plansza.Plansza;
 import kolkoKrzyzyk.ustawienia.plansza.Symbol;
 
-abstract public class PustePole {
+abstract public class CzyPustePole {
 
 
     public boolean czyPustePole(Plansza plansza, int wier, int pol) {

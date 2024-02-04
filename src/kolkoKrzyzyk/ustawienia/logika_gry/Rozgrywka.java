@@ -3,9 +3,9 @@ package kolkoKrzyzyk.ustawienia.logika_gry;
 import kolkoKrzyzyk.ustawienia.gracze.Gracz;
 import kolkoKrzyzyk.ustawienia.plansza.Plansza;
 
-public class InicjacjaGry {
+public class Rozgrywka {
 
-    public void inicjujGre(int size, int ileSymboliWygrywa, int ileRund, Plansza plansza, Gracz graczO, Gracz graczX, CzyZwyciezcaRundy zwyciezcaRundy) {
+    public void rozgrywajGre(int size, int ileSymboliWygrywa, int ileRund, Plansza plansza, Gracz graczO, Gracz graczX, CzyZwyciezcaRundy zwyciezcaRundy) {
 
         int rundaNumer = 1;
 
@@ -25,10 +25,10 @@ public class InicjacjaGry {
             } else {
                 gracz = graczX;
             }
-            while (iloscRuchow < iloscRuchowTotal - 1) {
+            while (iloscRuchow < iloscRuchowTotal) {
                 gracz.mojRuch(plansza, size, gracz);
-                System.out.println(plansza);
                 iloscRuchow++;
+                System.out.println(plansza);
                 if (zwyciezcaRundy.czyZwyciezcaRundy(plansza, size, gracz, ileSymboliWygrywa)) {
                     zwyciezcaR = true;
                     break;

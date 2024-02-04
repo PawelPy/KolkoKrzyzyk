@@ -1,17 +1,18 @@
-package kolkoKrzyzyk.logic.plansza;
+package kolkoKrzyzyk.ustawienia.plansza;
 
+import kolkoKrzyzyk.ustawienia.logika_gry.CzyPustePole;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Plansza {
+public class Plansza extends CzyPustePole {
 
     private final List<Wiersz> plansza = new ArrayList<>();
-    private int size;
-    protected int wier;
-    protected int pol;
-    protected Symbol symbol;
 
     public Plansza(int size) {
+        extracted(size);
+    }
+
+    private void extracted(int size) {
         for (int wier = 0; wier < size; wier++) {
             plansza.add(new Wiersz(size));
         }
@@ -23,7 +24,6 @@ public class Plansza {
         String string = "";
         for (int wier = 0; wier < plansza.size(); wier++) {
             string += plansza.get(wier) + "\n";
-
             if (wier < plansza.size() - 1 ) {
                 for (int i = 0; i < plansza.size(); i++) {
                     if (i < plansza.size() - 1) {
@@ -33,7 +33,6 @@ public class Plansza {
                     }
                 }
             }
-
         }
         return string;
     }
@@ -42,9 +41,7 @@ public class Plansza {
         return plansza;
     }
 
-    public int getSize() {
-        return size;
-    }
+
 
 
 
